@@ -1,0 +1,30 @@
+<div class="wwa-temperature-widget">
+    <!-- The Heading -->
+    <div class="wwa-temperature-heading">
+        <img src="modules/core/img/ninja.png" class="wwa-temperature-icon" alt="core"/>
+        <span class="wwa-temperature-title">Temp</span>
+    </div>
+
+    <!-- The Body -->
+    <div class="wwa-temperature-body" ng-style= "selectedLocation != null && {'background-image': 'url(/' + selectedLocation.image + ')'}">
+        <!-- if it is NOT loaded and does NOT have an error, then show this -->
+        <div ng-if="!isLoaded && !hasError">
+            <i class="fa fa-refresh fa-2x fa-spin"></i>
+        </div>
+        <!-- if it IS loaded, then show this -->
+        <div class="wwa-temperature-view" ng-if="isLoaded">
+            <div class="wwa-temperature-river-name">
+                {{selectedLocation.name}}
+            </div>
+            <div class="wwa-temperature-degrees">
+                {{selectedLocation.temperature}}deg
+            </div>
+        </div>
+        <!-- if it has an error :(  -->
+        <div ng-if="hasError">
+            <h4>Error Loading widget Mayne!!</h4>
+            <button class="btn btn-primary btn-lg" ng-click="loadLocation()">Try Again</button>
+        </div>
+    </div>
+
+</div>

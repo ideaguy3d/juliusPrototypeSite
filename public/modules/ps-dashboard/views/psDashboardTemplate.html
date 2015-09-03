@@ -1,0 +1,50 @@
+<div class="ps-dashboard-header">
+    {{title}} <strong><i>IS THE TITLE MAYNE!!!</i></strong>
+    <div class="ps-dashboard-controls">
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                    data-toggle="dropdown" aria-expanded="true">
+                <i class="fa fa-plus"></i>
+                Add Widget
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                <li ng-repeat="widget in widgetDefinitions">
+                    <a role="menuitem" ng-click="addNewWidget(widget)">{{widget.title}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- by using this 'gridster' attr we're creating an ngGridster dashboard
+ this is the actually dashboard and the gridster attr is what actually defines it-->
+<div gridster="gridsterOpts">
+
+    <ul>
+<!-- g-i = "item" name needs to match the varName "item" in our ng-repeat, both must have the same name. In this case, "item" is both their names -->
+        <li gridster-item="item" ng-repeat="item in widgets"><!-- by using ngrepeat over our widgets, we're adding widgets to the dashboard -->
+            <!-- the body --
+            we make it its' own custom directive that we can compile it and
+            keep it out of the dashboard ??? so that we can make sure all
+            the compilation can happen with in this new ps-widget-body directive -->
+            <ps-widget-body>
+            </ps-widget-body><!-- this div is where the widgets will be inserted -->
+        </li>
+    </ul>
+
+</div>
+
+<!-- The old header to our widgets... but now the widgets have their own header so we remove this
+            <div class="ps-widget-header">
+                <span>{{item.title}}</span>
+                <div class="ps-widget-header-buttons">
+                    <button class="btn btn-default pull-right">
+                        <i class="fa fa-remove"></i>
+                    </button>
+                    <button class="btn btn-default pull-right">
+                        <i class="fa fa-gear"></i>
+                    </button>
+                </div>
+            </div>
+            -->

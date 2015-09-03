@@ -1,0 +1,33 @@
+<section data-ng-controller="psFrameworkController">
+
+    <!--<h1>This is the Psframework view</h1>-->
+
+    <ps-framework title="like OMG mayne!!" subtitle="discipline over regret..." icon-file="modules/core/img/info2.jpg">
+
+        <ps-menu>
+            <ps-menu-item label="Dashboard" icon="fa-dashboard" route="dashboard"></ps-menu-item>
+            <ps-menu-item label="Locations" icon="fa-location-arrow" route="locations"></ps-menu-item>
+            <ps-menu-item label="Raft Guides" icon="fa-user" route="guides"></ps-menu-item>
+
+            <ps-menu-group label="Equipment" icon="fa-gears">
+                <ps-menu-item label="Rafts" icon="fa-unlink" route="rafts"></ps-menu-item>
+                <ps-menu-item label="Paddles" icon="fa-magic" route="paddles"></ps-menu-item>
+                <ps-menu-item label="Life Vests" icon="fa-life-ring" route="vests"></ps-menu-item>
+                <!-- another inner grouping just for prac -->
+                <ps-menu-group label="Equipment" icon="fa-gears">
+                    <ps-menu-item label="Rafts2" icon="fa-unlink" route="rafts"></ps-menu-item>
+                    <ps-menu-item label="Paddles2" icon="fa-magic" route="paddles"></ps-menu-item>
+                    <ps-menu-item label="Life Vests2" icon="fa-life-ring" route="vests"></ps-menu-item>
+                </ps-menu-group>
+            </ps-menu-group>
+        </ps-menu>
+
+    </ps-framework>
+
+</section>
+
+<script type="text/javascript">
+    $('h1').click(function () {
+        $(this).hide();
+    });
+</script>

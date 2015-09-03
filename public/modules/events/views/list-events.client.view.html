@@ -1,0 +1,82 @@
+<section data-ng-controller="EventsController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>dis be jEvents YO!</h1>
+        <h4>ya digz???</h4>
+
+        <p>this is following along w/the ng fundamentals course from pluralsight </p>
+    </div>
+    <div class="well">
+        <div class="container">
+            <!-- $cache built in service section practice from pluralsight course -->
+            <p>-$cacheFactory section practice-</p>
+            key: &nbsp;&nbsp; <input type="text" ng-model="key"/> <br/><br/>
+            value: <input type="text" ng-model="value"/> <br/><br/>
+            <button type="button" class="btn btn-primary" ng-click="addToCache(key, value)">Add to Cache</button>
+            <br/><br/>
+            <input type="text" ng-model="keyToRead"/><br/>
+
+            <h3>Value from cache: {{readFromCache(keyToRead)}}</h3>
+
+            <h3>Cache Stats: {{getCacheStats}}</h3>
+
+            <hr/><hr/>
+            <p>-$cookieStore section practice-</p>
+            <button class="btn btn-info" ng-click="saveEventToCookie(event)">Store</button>
+            <button class="btn btn-info" ng-click="getEventFromCookie()">Get Cookie</button>
+            <button class="btn btn-info" ng-click="removeEventCookie()">Remove Cookie</button>
+
+
+            <!--<p>-$compile section practice-</p>-->
+            <!--<div id="appendHere">...</div>-->
+            <!--<br/><br/>-->
+            <!--name: &nbsp;&nbsp; <input type="text" ng-model="name"/><br/><br/>-->
+            <!--markup: <input type="text" ng-model="markup"/><br/><br/>-->
+            <!--<button class="btn btn-warning" ng-click="appendToDivElement(markup)">Append Markup Mayne</button>-->
+
+        </div>
+    </div>
+    <!-- this was supposed to be what I used to try work through the $http and $resource sections from the pluralsight course -->
+    <div>
+        Show:
+        <select name="" id="" data-ng-model="query" class="input-medium">
+            <option selected value="">All</option>
+            <option value="introductory">Intro</option>
+            <option value="intermediate">Mid-Level ish</option>
+            <option value="advanced">Advanced</option>
+        </select>
+        <ul class="thumbnails">
+            <li ng-repeat="sessions in event.sessions | filter:query | orderBy:sortorder" class="col-md-11"
+                id="session[{session.id}]">
+                <div class="row session">
+                    <div class="well col-md-1 votingWidget">
+                        <div><i class="icon-chevron-up icon-white"></i></div>
+                        <div class="badge badge-inverse">
+                            <div>{{session.upVoteCount}}</div>
+                        </div>
+                        <div></div>
+
+                    </div>
+                    <div class="well">
+
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- this is the boilerplate code yo generates that is in EVERY crud generated module -->
+    <div class="list-group">
+        <a data-ng-repeat="event in events" data-ng-href="#!/events/{{event._id}}" class="list-group-item">
+            <small class="list-group-item-text">
+                Posted on
+                <span data-ng-bind="event.created | date:'medium'"></span>
+                by
+                <span data-ng-bind="event.user.displayName"></span>
+            </small>
+            <h4 class="list-group-item-heading" data-ng-bind="event.name"></h4>
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!events.$resolved || events.length">
+        No Events yet, why don't you <a href="/#!/events/create">create one</a>?
+    </div>
+</section>

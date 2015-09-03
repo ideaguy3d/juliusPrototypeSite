@@ -1,0 +1,17 @@
+<!-- some of the classes and directives we took out
+class="ps-menu-area" ng-show="showMenu"
+ng-class="{'ps-menu-area-vertical': isVertical, 'ps-menu-area-horizontal': !isVertical}" -->
+<div>
+
+    <!-- this will show our menuItems -->
+    <ul class="ps-menu" ng-transclude></ul>
+
+    <!-- this is the button that allows our vert menu to be vertical or horizontal -->
+    <a class="btn ps-menu-layout-button"
+       ng-show="allowHorizontalToggle"
+       ng-click="toggleMenuOrientation()"
+       ng-class="{'ps-layout-button-horizontal': !isVertical}">
+
+        <i class="fa" ng-class="{'fa-chevron-up': isVertical, 'fa-chevron-left': !isVertical}"></i>
+    </a>
+</div>

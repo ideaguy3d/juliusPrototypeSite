@@ -1,0 +1,17 @@
+<!-- the 3 sections needed for using the modal service from Angular UI -->
+<div class="modal-header">
+    <h3 class="modal-title">Select Employee</h3>
+</div>
+
+<div class="modal-body">
+    <h3>Name</h3>
+    <!-- ng sets the ng-model automatically depending on what we select -->
+    <select ng-show="isLoaded" ng-model="selectedLocation"
+            ng-options="location.name for location in locations"></select>
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary" ng-click="saveSettings()">Ok YO!</button>
+    <button type="button" class="btn btn-warning" ng-click="$dismiss()">Cancel YO!</button>
+    <!-- $dismiss is provided by ui.bootstrap -->
+</div>

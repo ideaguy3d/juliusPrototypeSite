@@ -1,0 +1,641 @@
+.content {
+	margin-top: 50px;
+}
+.undecorated-link:hover {
+	text-decoration: none;
+}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+	display: none !important;
+}
+.ng-invalid.ng-dirty {
+	border-color: #FA787E;
+}
+.ng-valid.ng-dirty {
+	border-color: #78FA89;
+}
+
+.jland{
+    width: 100%;
+    height: 500px;
+    background-color: darkgreen;
+    /*background-image: url("/public/modules/core/img/logo.png");*/
+}
+
+
+.jh1{
+    border: solid 1px darkgrey;
+    color: deepskyblue;
+}
+
+input.ng-dirty.ng-invalid {
+    border: 1px solid red;
+}
+
+
+
+
+
+
+/**
+Here is the css from the "Building a spa framework using ng" pluralsight.com
+*/
+.psframeworkH1 {
+    color: orange;
+    font-family: "Indie Flower", sans-serif;
+    margin-left: 15px;
+    margin-top: -14px;
+    display: inline;
+    border: solid 2px grey;
+    border-radius: 4px;
+    padding: 2px;
+    cursor: pointer;
+}
+.psframeworkH1:hover{
+    background-color: dimgrey;
+}
+
+.ps-title-bar {
+    background-color: #444444;
+    padding: 0 20px;
+    border-bottom: 2px solid black;
+    color: whitesmoke;
+}
+
+.ps-title-area {
+    display: inline-block;
+    text-align: right;
+}
+
+.ps-icon {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 8px;
+    vertical-align: top; /**            vertical-align */
+    border: 1px solid #999;
+}
+
+.ps-logo-title {
+    margin-top: 6px;
+    font-size: 22px;
+}
+
+.ps-logo-area {
+    /*text-align: center;*/
+}
+
+.ps-logo-subtitle {
+    font-size: 14px;
+    margin-top: -14px;
+    color: lightgrey;
+}
+
+/**so if it's 430px or smaller these rules will take effect ! */
+@media screen and (max-width:430px)  {
+    .ps-icon{
+        display: none;
+    }
+    .ps-logo-title {
+        font-size: 19px;
+    }
+}
+
+.ps-right-side-controls{
+    line-height: 60px; /**              line-height... we do this so we can vertically center */
+}
+
+.ps-right-side-controls > div {
+    text-align: center; /**             text-align*/
+}
+
+@media screen and (min-width: 768px){
+    .ps-right-side-controls > div {
+        text-align: right;
+    }
+    .ps-logo-area {
+        text-align: left;
+    }
+}
+
+.ps-menu-area {
+    position: relative; /**             position... I need to restudy this property in depth again!!! */
+    background-color: #333333;
+    color: #8c8c8c;
+    padding-left: 0;
+
+}
+
+.ps-menu-area-vertical {
+    float: left; /** by floating this to the left, our framework is able to appear*/
+    width: 200px;
+    min-height: 100vh; /**              vh... stands for 'vertical height' */
+    padding-top: 30px;
+}
+
+.ps-menu-area-horizontal {
+    width: 100%;
+    height: 50px;
+}
+
+.ps-menu-area ul {
+    padding-left: 0;
+}
+
+.ps-menu-area .btn:hover {
+    color: cornflowerblue;
+}
+
+.ps-menu {
+    list-style-type: none;
+    vertical-align: top; /**               vertical-align... again I need to study this property*/
+    padding-top: 10px;
+}
+
+.ps-menu ul {
+    display: inline;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.ps-menu li {
+    line-height:  3em; /**              line-height... never used this prop. 3em means 3 times the size of the font */
+    cursor: pointer;
+}
+
+.ps-menu li div {
+    display: inline-block;
+    width: 90%;
+    padding-left: 16px;
+}
+
+.ps-selectable-item:hover {
+    background-color: #555555;
+}
+
+.ps-noselect { /**this makes it so the user can't highlight the text*/
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.ps-menu-icon {
+    margin-right: 10px;
+}
+
+.ps-menu-active-indicator {
+    float: right;
+    color: orange;
+    margin-right: 0;
+    margin-top: 8px;
+}
+
+.ps-collapsed-menu {
+    display: inline-block;
+    height: 100%; /**this is 100% of the row*/
+}
+
+.ps-nav-button {
+    height: 40px;width: 60px;
+    margin-top: 10px;
+    border:1px solid #888888;
+    padding:0;font-size:26px;
+    color:#77ee77;
+}
+
+.ps-group-indicator-left {
+    float: right;
+    color: deepskyblue;
+    margin-top: 15px;
+    margin-right: 2px;
+}
+
+.ps-subitem-section {
+    padding-left:16px;
+}
+
+.ps-menu-layout-button {
+    margin: 12px;
+    padding: 2px 8px;
+    color: greenyellow;
+    border: solid 1px greenyellow;
+    border-radius: 4px;
+}
+
+.ps-layout-button-horizontal {
+    position: absolute;/**this will be relative to the menu area itself*/
+    top: -6px;/**it'll be up a little from menu*/
+    right:10px;/**there will be 10px from the right because it's positioned absolutely relative the menu*/
+}
+
+.ps-item-horizontal {
+    display: inline-block;
+    width: 168px !important;
+    margin-left: 20px;
+    margin-top: 2px;
+    line-height:1.5em !important;/**               line-height... is 1.5times the size of the font... again, study this prop more in depth*/
+}
+
+.ps-popup-menu {
+    position: absolute;
+    z-index: 1000;
+    background-color: #333333;
+    width: 200px;
+    padding-left: 0;
+}
+
+
+.ps-fade-in-animation {
+    -moz-transition: linear all 0.5s;
+    -o-transition: linear all 0.5s;
+    -webkit-transition: linear all 0.5s;
+    transition: linear all 0.5s;
+}
+
+/**ng-hide is a class that ng
+auto adds when the dom element is hidden*/
+.ps-fade-in-animation.ng-hide {
+    opacity: 0;/**opacity at 1 means fully visible*/
+}
+
+.ps-view {
+    margin-left:200px;
+    padding:20px;
+    background-color:#c0c0c0;
+    min-height: 100vh;/** the minimun height this content can be is 100% of the vertical height*/
+    overflow: auto;/** make sure nothing falls out of the top of the page*/
+}
+
+.ps-view-full-width {
+    margin-left: 0;
+}
+
+/** our psDashboard CSS */
+
+.ps-dashboard {
+    margin: 0;
+    width: 100%;
+}
+
+/** underneath .gridster class look for .gridster-item*/
+.gridster .gridster-item {
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    background: white;
+}
+
+.ps-widget-header {
+    position: relative;
+    color: floralwhite;
+    background-color: #444444;
+    font-size: 16px;
+    border-bottom: 1px solid orange;
+    min-height: 38px;
+    padding: 8px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+}
+
+.ps-widget-header-buttons {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.ps-widget-header-buttons .btn {
+    margin: 4px;
+    margin-top: 3px;
+    padding-top: 1px;
+}
+
+.ps-dashboard-header {
+    font-size: 20px;
+    border-bottom: 2px solid greenyellow;
+    color: white;
+    background-color: #777777;
+    margin: -20px; /** we do this just to compensate for our view and the gridster control itself.
+    this is what allows the dashboard title to butt up against the edges */
+    margin-bottom: 20px;
+    min-height: 50px;
+    padding: 8px;
+    padding-left: 20px;
+}
+
+/** wwa temperature widget */
+.wwa-temperature-widget {
+    /**
+    we set both to 100% because this widget is going to
+    exist inside a gridster widget, and we want it to take
+    up the full area
+    */
+    height: 100%;
+    width: 100%;
+    min-height: 180px;
+    font-size: 16px;
+    color: grey;
+}
+
+.wwa-temperature-heading {
+    background-color: red;
+    color: white;
+    height: 32px;
+    padding-top: 2px;
+    font-size: 15px;
+    line-height: 32px;
+}
+
+.wwa-temperature-icon {
+    height: 32px;
+    width: 32px;
+    margin-top: -2px;
+
+}
+
+.wwa-temperature-body {
+    position: relative;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    min-height: 180px;
+}
+
+.wwa-temperature-body .fa-spin{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.wwa-temperature-view {
+    /**this is our little view that sticks to the bottom right corner*/
+    background-color: rgba(255,255,255,.7);
+    position: absolute;
+    right: 5px;
+    bottom: 38px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+
+.wwa-temperature-river-name{
+    height: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.ps-dashboard-controls {
+    float: right;
+}
+
+.wwa-inventory-widget {
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    min-height: 200px; /**the min height must be 200px, it cannot be smaller than this*/
+}
+
+.wwa-inventory-heading {
+    background-color: darkblue;
+    color: white;
+    height: 32px;
+    font-size: 15px;
+    line-height: 32px;/**the height inbetween text above and text below (e.g. how much space is there when a paragraph goes to a new line*/
+}
+
+.wwa-inventory-icon {
+    height: 24px;
+    width: 24px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.wwa-inventory-river-name {
+    height:30px;
+    font-size:14px;
+    font-weight:bold;
+    margin-top: 8px;
+    color: black;
+}
+
+.wwa-inventory-body {
+    position: relative;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-color: lavender;
+    height: 100%;
+    min-height: 180px;
+}
+
+.wwa-inventory-area {
+    position: absolute;
+    width: 350px;
+    margin: auto;
+    top: 5px;
+    right: 5px;
+    left: 5px;
+    background-color: rgba(255,255,255,.7);
+    border: 1px solid black;
+}
+
+.wwa-inventory-item {
+    display: inline-block;
+    margin: 0 15px;
+    font-size: 16px;
+    color: black;
+}
+.wwa-inventory-item img {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 0;
+    width: 40px;
+    height: 40px;
+}
+
+.wwa-inventory-amount {
+    font-size: 25px;
+}
+
+.wwa-inventory-caption {
+    display: block;
+    margin-top:-5px;
+}
+
+.wwa-employee-widget {
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+}
+
+.wwa-employee-heading {
+    background-color: darkorange;
+    color: darkblue;
+    height: 32px;
+    padding-top: 2px;
+    font-size: 15px;
+    line-height: 32px;
+}
+
+.wwa-employee-body {
+    display: table;
+    background-color: lemonchiffon;
+    color: darkblue;
+    width: 100%;
+    height: 100%;
+}
+
+.wwa-employee-row {
+    display: table-row;
+}
+
+.wwa-employee-icon {
+    height: 24px;
+    width: 24px;
+    margin-top: -3px;
+    margin-left: 3px;
+}
+
+.wwa-employee-name-area {
+    display: table-cell;
+    width: 180px;
+    vertical-align: top;
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+.wwa-employee-name-area h4 {
+    margin-bottom: 4px;
+    font-size: 10px;
+}
+
+.wwa-employee-name-area p {
+    font-size: 20px;
+}
+
+.wwa-employee-picture-area {
+    display: table-cell;
+    background-size: cover;
+    background-position: center;
+}
+
+.ps-widget-menu-area {
+    position: absolute;
+    top: 0;
+    right: 8px;
+    font-size: 22px;
+}
+
+.ps-widget-menu-area .dropdown-menu {
+    left: -20px;
+    padding-left: 15px;
+    width: 20px;
+}
+
+.ps-widget-menu-area a {
+    color: white;
+}
+
+.ps-widget-menu-area ul.dropdown-menu li {
+    width: 40px;
+    display: inline;
+}
+
+.ps-widget-menu-area i {
+    cursor: pointer;
+}
+
+/**this class is a bootstrap
+class, we set it to static so
+it'll work on iOS an other
+tablet/smart devices*/
+.dropdown-backdrop {
+    position: static;
+}
+
+.ps-user-profile {
+    background-color: #333333;
+    color: white;
+    width: 200px;
+    min-height: 120px;
+    padding-top: 10px;
+}
+
+.ps-user-profile > div {
+    display: inline-block;
+    padding-top: 10px;
+    margin-left: 5px;
+}
+
+.ps-user-profile > div > p {
+    margin-top: 8px;
+}
+
+.ps-user-profile img{
+    float: left;
+    margin: 12px;
+    width: 80px;
+    height: 80px;
+}
+
+.ps-user-profile-small {
+    color: #3333ee;
+    padding-top: 4px;
+}
+
+.ps-user-profile-small>span{
+    font-size: 18px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.ps-user-profile-small img{
+    width: 40px;
+    height: 40px;
+}
+
+button.navbar-toggle {
+    background-color: deepskyblue;
+}
+
+button.navbar-toggle > span {
+    background-color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***/

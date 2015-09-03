@@ -1,0 +1,116 @@
+<section data-ng-controller="IdeasController" data-ng-init="find()">
+    <div class="page-header">
+        <h1 class="jh1">Ideas</h1>
+    </div>
+
+    <!-- ============================ start of CUSTOM DIRECTIVE's ============================ -->
+    <hr/>
+    <hr/>
+
+    <div class="container">
+        <div class="jumbotron">
+            Date format: <input ng-model="format"/>
+            Current Time = <span my-current-time="format"></span><!-- this line uses the custom display time directive -->
+            <br/>
+            <!-- here we begin our draggable prac -->
+            <span jlistener-drag></span>
+            <br/>
+
+            <!-- Here we begin our tab pane prac from ng dev guide docs directives sec -->
+            <h3>The Games:</h3>
+            <my-tabs>
+                <my-pane title="Game 1">
+                    <div class="col-md-8">
+                        <h1>This is the first tab</h1>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, dolores ducimus ex
+                            facilis id nam nulla placeat provident vero vitae? Accusantium ad aliquid debitis et illo
+                            optio quibusdam repudiandae, unde?
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="/modules/core/img/info1.jpg" alt="infographic" width="300" height="400"/>
+                    </div>
+                </my-pane>
+                <my-pane title="Game 2">
+                    <div class="col-md-8">
+                        <h1>This is the second tab!</h1>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae debitis et ex molestiae
+                            natus nulla
+                            voluptates? Ab aliquid doloremque ducimus eius, eum exercitationem impedit in iste nisi
+                            quidem
+                            repellendus sapiente.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="/modules/core/img/info2.jpg" alt="infographic" width="300" height="400"/>
+                    </div>
+                </my-pane>
+                <my-pane title="3rd Game">
+                    <div class="col-md-8">
+                        <h1>and this is The Third!!!</h1>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, dolores ducimus ex
+                            facilis id nam nulla placeat provident vero vitae? Accusantium ad aliquid debitis et illo
+                            optio quibusdam repudiandae, unde?</p>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="/modules/core/img/info3.png" alt="infographic" width="300" height="400"/>
+                    </div>
+                </my-pane>
+                <my-pane title="4th Game">
+                    <div class="col-md-8">
+                        <h1>and The Fourth!!!!</h1>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, dolores ducimus ex
+                            facilis id nam nulla placeat provident vero vitae? Accusantium ad aliquid debitis et illo
+                            optio quibusdam repudiandae, unde?</p>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="/modules/core/img/info4.png" alt="infographic" width="300" height="400"/>
+                    </div>
+                </my-pane>
+            </my-tabs>
+
+
+        </div>
+    </div>
+
+    <div jevent2-dir type="myevent2">
+        WAD UP MAYNE! i'm from {{alvarado.address}}
+    </div>
+
+    <strong><p class="text-center">{{jmessage}}</p></strong><!-- simple message -->
+    <jevent-dir info="julius" ng-hide="dialogIsHidden" on-close="hideDialog(message)">
+        Check outz da contents {{name}}
+    </jevent-dir>
+
+    <jevent-dir info="alvarado" ng-hide="dialogIsHidden" on-close="hideDialog(zmessage)">
+        Check outz da contents {{julius.name}}
+    </jevent-dir>
+
+    <hr/>
+    <hr/>
+    <!-- ============================ end of CUSTOM DIRECTIVE's ============================ -->
+
+
+    <!-- This html file is now back to the boilerplate RESTful code -->
+    <div class="list-group">
+        <a data-ng-repeat="idea in ideas" data-ng-href="#!/ideas/{{idea._id}}" class="list-group-item">
+            <small class="list-group-item-text">
+                Posted on
+                <span data-ng-bind="idea.created | date:'medium'"></span>
+                by
+                <span data-ng-bind="idea.user.displayName"></span>
+            </small>
+            <h4 class="list-group-item-heading" data-ng-bind="idea.name"></h4>
+        </a>
+        <br/>
+        , <a href="#!/ideas/create" style="border: solid deepskyblue 2px; border-radius: 4px; padding: 2px;">Create some
+        More! ^_^</a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!ideas.$resolved || ideas.length">
+        No Ideas yet, why don't you <a href="/#!/ideas/create">create one</a>?
+    </div>
+</section>
+

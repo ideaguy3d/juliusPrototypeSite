@@ -1,0 +1,15 @@
+<!-- simply give this the class we took away from the other directive custom template-->
+<div class="ps-widget-body">
+    <div class="ps-widget-menu-area dropdown">
+        <a id="dLabel" class="dropdown-toggle" data-toggle="dropdown" role="button"
+           aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-bars" ng-click="iconClicked()"></i>
+        </a>
+        <!-- when the <a> is clicked the ul will show up -->
+        <ul class="dropdown-menu" aria-labelledby="dLabel">
+            <li ng-click="close()"><i class="fa fa-2x fa-close" ng-click="iconClicked()"></i></li>
+            <hr/>
+            <li ng-click="settings()"><i class="fa fa-2x fa-gear" ng-click="iconClicked()"></i></li>
+        </ul>
+    </div>
+</div>

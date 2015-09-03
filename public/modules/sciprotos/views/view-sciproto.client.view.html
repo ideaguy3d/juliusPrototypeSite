@@ -1,0 +1,23 @@
+<section data-ng-controller="SciprotosController" data-ng-init="findOne()">
+	<div class="page-header">
+		<h1 data-ng-bind="sciproto.name"></h1>
+	</div>
+	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == sciproto.user._id))">
+		<a class="btn btn-primary" href="/#!/sciprotos/{{sciproto._id}}/edit">
+			<i class="glyphicon glyphicon-edit"></i>
+		</a>
+		<a class="btn btn-primary" data-ng-click="remove();">
+			<i class="glyphicon glyphicon-trash"></i>
+		</a>
+	</div>
+    <a ui-sref="listSciprotos" class="btn btn-default">See the Rest</a>
+	<small>
+		<em class="text-muted">
+			Posted on
+			<span data-ng-bind="sciproto.created | date:'mediumDate'"></span>
+			by
+			<span data-ng-bind="sciproto.user.displayName"></span>
+		</em>
+	</small>
+
+</section>

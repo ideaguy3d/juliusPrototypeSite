@@ -1,0 +1,91 @@
+.spoiler {
+  background: #ffa500;
+  color: #fff;
+  margin-top: 0;
+  transition: all 400ms ease;
+  width: 200px;
+}
+.spoiler:hover {
+  animation: slideAround 3s;
+}
+.spoiler2 {
+  color: #ffa500;
+  display: inline-block;
+  transition: all 400ms ease;
+}
+.spoiler2:hover {
+  background: #00f;
+  margin-left: 300px;
+}
+@-moz-keyframes slideAround {
+  0% {
+    margin-left: 0;
+    margin-top: 0;
+  }
+  25% {
+    margin-left: 50px;
+    margin-top: 0;
+  }
+  50% {
+    margin-left: 50px;
+    margin-top: 50px;
+  }
+  100% {
+    margin-left: 0;
+    margin-top: 0;
+  }
+}
+@-webkit-keyframes slideAround {
+  0% {
+    margin-left: 0;
+    margin-top: 0;
+  }
+  25% {
+    margin-left: 50px;
+    margin-top: 0;
+  }
+  50% {
+    margin-left: 50px;
+    margin-top: 50px;
+  }
+  100% {
+    margin-left: 0;
+    margin-top: 0;
+  }
+}
+@-o-keyframes slideAround {
+  0% {
+    margin-left: 0;
+    margin-top: 0;
+  }
+  25% {
+    margin-left: 50px;
+    margin-top: 0;
+  }
+  50% {
+    margin-left: 50px;
+    margin-top: 50px;
+  }
+  100% {
+    margin-left: 0;
+    margin-top: 0;
+  }
+}
+@keyframes slideAround {
+  0% {
+    margin-left: 0;
+    margin-top: 0;
+  }
+  25% {
+    margin-left: 50px;
+    margin-top: 0;
+  }
+  50% {
+    margin-left: 50px;
+    margin-top: 50px;
+  }
+  100% {
+    margin-left: 0;
+    margin-top: 0;
+  }
+}

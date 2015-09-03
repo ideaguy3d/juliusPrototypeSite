@@ -1,0 +1,29 @@
+<!-- this is a directives template!!! -->
+<div class="well">
+    <div class="container" style="border: solid deepskyblue 1px; border-radius: 4px">
+        <p>we are in the myevent.html directive template</p>
+        <div class="col-md-4">
+            <h1> Name: {{info.name}}</h1>
+            <h4> Address: {{info.address}}</h4>
+        </div>
+        <div class="col-md-4">
+            <img src="/modules/core/img/info1.jpg" alt="infographic" width="300" height="400"/>
+        </div>
+        <div class="col-md-3">
+            <!-- working through the "Creating directives that wrap other
+             elements" section of the ng developer guide -->
+            <div class="alert">
+                in "div.alert"...
+                <a href class="close" ng-click="close({message: 'closing fuh now bruh!'})">close</a>
+                <div ng-transclude></div>
+            </div>
+            <!-- just a random ul element using bootstrap specific classes -->
+            <div class="list-group">
+                <a href="#" class="list-group-item active">Learn More:</a>
+                <a href="#" class="list-group-item">More info on top_topic</a>
+                <a href="#" class="list-group-item">More info on middle_topic</a>
+                <a href="#" class="list-group-item">More info on bottom_topic</a>
+            </div>
+        </div>
+    </div>
+</div>

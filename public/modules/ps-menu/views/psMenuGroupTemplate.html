@@ -1,0 +1,19 @@
+<!-- this is our item that can be clicked on -->
+<li class="ps-selectable-item" ng-click="clicked()" ng-class="{'ps-item-horizontal':!isVertical()}">
+    <div class="ps-noselect"><!-- prevent from being highlighted -->
+        <i class="fa {{icon}} ps-menu-icon"></i>
+        {{label}}
+        <!-- only show this element if it's vertical -->
+        <i ng-if="isVertical()" class="fa fa-chevron-left ps-group-indicator-left"
+           ng-class="{'fa-rotate-270': isOpen}"><!-- so add class if isOpen is true, btw fa-rotate-270 is a built in class provided by font awesome -->
+
+        </i>
+    </div>
+</li>
+
+<!-- once our item is clicked on the div below will show our transcluded content, if we have the
+ ps-subitem-section class we know we want to show this submenu vertically
+ REM: these are the subitems, but we want to have the whole surrounding div with its' transcluded content animate-->
+<div ng-show="isOpen" class="ps-subitem-section ps-fade-in-animation" ng-class="{'ps-popup-menu':!isVertical()}">
+    <ul ng-transclude></ul>
+</div>
