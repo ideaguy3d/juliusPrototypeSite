@@ -1,0 +1,5 @@
+this is the end point json data our events $http
+will fetch
+
+
+...working through some course, probably ng fundamentals
